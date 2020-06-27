@@ -1,7 +1,7 @@
 document.addEventListener('keydown', e => {
   let audio;
   let set = false;
-  
+
   e.preventDefault();
   switch (e.keyCode) {
     case 65:
@@ -42,4 +42,5 @@ document.addEventListener('keydown', e => {
         break;
   }
   if (set) audio.play();
+  
  });

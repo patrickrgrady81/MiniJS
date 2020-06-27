@@ -9,7 +9,6 @@ document.addEventListener('keydown', e => {
     selected[0].classList.toggle("active");
     switch (e.keyCode) {
       case 65:
-      
         audio = new Audio('./sounds/boom.wav');
         set = true;
         break;

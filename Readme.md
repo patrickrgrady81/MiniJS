@@ -13,5 +13,7 @@ It says 30 in 30. I realize that some projects may take more than a day and I mi
 
 Projects
 --------
+<p>
 06/27/2020 - 001 Drums - Javascript
+<p>
 06/28/2020 - 002 Clock - Javascript

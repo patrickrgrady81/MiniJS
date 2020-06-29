@@ -17,3 +17,5 @@ Projects
 06/27/2020 - 001 Drums - Javascript
 <p>
 06/28/2020 - 002 Clock - Javascript
+<p>
+06/29/2020 - 003 Calculator - Javascript

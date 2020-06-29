@@ -44,12 +44,10 @@ const clearCanvas = (ctx) => {
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
-const drawArm = (change, halfWidth, halfHeight, radius, length, color) => { 
-  const TAU = Math.PI * 2
-
-  const angle = TAU * change;
-  let targetX = halfWidth + Math.cos(angle - (TAU/4)) * (radius * length);
-  let targetY = halfHeight + Math.sin(angle - (TAU/4)) * (radius * length);
+const drawArm = (angle, halfWidth, halfHeight, radius, length, color) => { 
+  const TAU = Math.PI * 2;
+  let targetX = halfWidth + Math.cos(angle) * (radius * length);
+  let targetY = halfHeight + Math.sin(angle) * (radius * length);
 
   ctx.lineWidth = 3;
   ctx.strokeStyle = color;
@@ -59,6 +57,59 @@ const drawArm = (change, halfWidth, halfHeight, radius, length, color) => {
   ctx.stroke();
 }
 
+const drawNumbers = (ctx, radius, halfWidth, halfHeight) => { 
+  let ang;
+  ctx.font = radius * 0.15 + "px mono";
+  ctx.textBaseline = "middle";
+  ctx.textAlign = "center";
+  for(let num = 1; num < 13; num++){
+    angle = num * Math.PI / 6;
+    ctx.rotate(angle);
+    ctx.translate(0, -radius * 0.85);
+    ctx.rotate(-angle);
+    ctx.fillText(num.toString(), halfWidth, halfHeight);
+    ctx.rotate(angle);
+    ctx.translate(0, radius * 0.85);
+    ctx.rotate(-angle);
+  }
+}
+
+const drawTicks = (ctx, radius, halfWidth, halfHeight) => { 
+  for (var i = 0; i < 12; i++) {
+    angle = (i - 3) * (Math.PI * 2) / 12;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+
+    var x1 = halfWidth + Math.cos(angle) * (radius);
+    var y1 = halfHeight + Math.sin(angle) * (radius);
+    var x2 = halfWidth + Math.cos(angle) * (radius - (radius / 10));
+    var y2 = halfHeight + Math.sin(angle) * (radius - (radius / 10));
+
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+
+    ctx.strokeStyle = 'black';
+    ctx.stroke();
+  }
+  
+  for (var i = 0; i < 60; i++) {
+    angle = (i - 3) * (Math.PI * 2) / 60;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+
+    var x1 = halfWidth + Math.cos(angle) * (radius);
+    var y1 = halfHeight + Math.sin(angle) * (radius);
+    var x2 = halfWidth + Math.cos(angle) * (radius - (radius / 30));
+    var y2 = halfHeight + Math.sin(angle) * (radius - (radius / 30));
+
+    ctx.moveTo(x1, y1);
+    ctx.lineTo(x2, y2);
+
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+}
+}
+
 const drawClock = ({hour, secs, mins}) => { 
   canvas = document.getElementById("canvas");
   ctx = canvas.getContext("2d");
@@ -66,6 +117,8 @@ const drawClock = ({hour, secs, mins}) => {
   const halfHeight = canvas.height / 2;
   const offset = 10;
   const radius = halfWidth - offset;
+  const TAU = Math.PI * 2
+  let angle;
 
   clearCanvas(ctx);
 
@@ -76,12 +129,25 @@ const drawClock = ({hour, secs, mins}) => {
   ctx.arc(halfWidth, halfHeight, radius, 0, 2 * Math.PI);
   ctx.stroke();
 
+  ctx.beginPath();
+  ctx.arc(halfWidth, halfHeight, radius * 0.05, 0, 2 * Math.PI);
+  ctx.fillStyle = 'black';
+  ctx.fill();
+
+  drawTicks(ctx, radius, halfWidth, halfHeight);
+  drawNumbers(ctx, radius, halfWidth, halfHeight);
+
+
+
   // Second Hand
-  drawArm(dTime.secs / 60, halfWidth, halfHeight, radius, 0.9, "red");
-   // Minute Hand
-  drawArm(dTime.mins / 60, halfWidth, halfHeight, radius, 0.8, "green");
+  angle = ((Math.PI * 2) * (dTime.secs / 60)) - ((Math.PI * 2) / 4);
+  drawArm(angle, halfWidth, halfHeight, radius, 0.9, "red");
+  // Minute Hand
+  angle = ((Math.PI * 2) * (dTime.mins / 60)) - ((Math.PI * 2) / 4);
+  drawArm(angle, halfWidth, halfHeight, radius, 0.75, "green");
   // Hour Hand
-  drawArm(dTime.hour / 12, halfWidth, halfHeight, radius, 0.5, "blue");
+  angle = ((Math.PI * 2) * ((dTime.hour * 5 + (dTime.mins / 60) * 5) / 60)) - ((Math.PI * 2) / 4);
+  drawArm(angle, halfWidth, halfHeight, radius, 0.6, "blue");
 
 }
 

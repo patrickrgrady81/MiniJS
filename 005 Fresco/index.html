@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Fresco</title>
+</head>
+<body>
+  <div class="wrapper">
+    <form class="options">
+      <label for="background">Background</label>
+      <select name="background" id="background">Background
+        <option value="white" selected>white</option>
+        <option value="black">black</option>
+        <option value="blue">blue</option>
+        <option value="red">red</option>
+        <option value="green">green</option>
+        <option value="yellow">yellow</option>
+        <option value="orange">orange</option>
+        <option value="lightgrey">light grey</option>
+      </select>
+      <label for="stroke">Stroke</label>
+      <select name="stroke" id="stroke">Background
+        <option value="white">white</option>
+        <option value="black" selected>black</option>
+        <option value="blue">blue</option>
+        <option value="red">red</option>
+        <option value="green">green</option>
+        <option value="yellow">yellow</option>
+        <option value="orange">orange</option>
+        <option value="lightgrey">light grey</option>
+      </select>
+      <label for="weight">Weight</label>
+      <input name="weight" id="weight" type="range" min="1" max="10" value="2"></input>
+      <input id="weightVal" type="text" readonly></input>
+      <button id="clear-btn">Clear</button>
+    </form>
+    <canvas id="canvas" width="600" height="500"></canvas>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

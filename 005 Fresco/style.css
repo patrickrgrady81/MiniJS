@@ -1,0 +1,40 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#canvas {
+  border: 1px solid black;
+  order: 0;
+  flex: 0 1 auto;
+  align-self: auto;
+}
+
+.options {
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-right: 0.1rem;
+}
+
+label[for="stroke"], label[for="weight"] {
+  margin-left: 2rem;
+}
+
+#weight {
+  margin-top: 0rem;
+}
+
+#weightVal {
+  width: 1rem;
+  margin-left: -0.3rem;
+}
+
+#clear-btn {
+  margin-left: 2rem;
+}

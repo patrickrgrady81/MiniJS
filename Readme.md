@@ -1,4 +1,10 @@
 <p>
+I am now just doing things on my own, that course didn't have very good projects, and for sure there were not 30.
+<p>
+Also, I have days that I cannot work on things due to having twin 2 year olds, so I try when I can.
+</p>
+# OLD
+<p>
 I am going through the wesbos.com free course on 30 Javascript projects in 30 days.
 <p>
 I will be trying to do the projects in vanilla Javascript.

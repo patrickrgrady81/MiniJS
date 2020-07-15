@@ -26,4 +26,8 @@ Projects
 <p>
 06/29/2020 - 003 Calculator - Javascript
 <p>
-06/30/2020 - 004 Fresco - Javascript
+07/15/2020 - 004 Breakout - Javascript
+<p>
+06/30/2020 - 004 Fresco - Javascript (still coming)
+
+

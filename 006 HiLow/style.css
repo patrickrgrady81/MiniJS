@@ -1,3 +1,26 @@
 body {
   background: blue;
+  color: white;
+}
+#wrapper {
+  display: flex;
+  height: 20vh;
+  width: 100vw;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+#results {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+#input, #results {
+  margin-left: 2rem;
+}
+
+#guesses {
+  text-align: center;
+  margin-left: 3rem;
 }

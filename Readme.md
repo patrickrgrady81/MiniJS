@@ -31,5 +31,7 @@ Projects
 06/30/2020 - 005 Fresco - Javascript - Drawing Program
 <p>
 07/22/2020 - 006 HiLow - Javascript - Pick a Number Game
+<p>
+07/22/2020 - 007 Quote - Javascript
 
 

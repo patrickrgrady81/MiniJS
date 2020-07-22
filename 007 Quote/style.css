@@ -1,0 +1,13 @@
+body {
+  background: cornflowerblue;
+  color: cornsilk;
+}
+
+#quote {
+  margin-left: 3rem;
+  margin-top: 3rem;
+}
+
+#author {
+  margin-left: 4rem;
+}

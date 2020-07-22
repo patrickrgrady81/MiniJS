@@ -1,13 +1,3 @@
-// Attach a mousedown, mousemove, and mouseup event listener to the canvas DOM
-
-// on mousedown, get the mouse coordinates, and use the moveTo() method to position your drawing cursor and the beginPath() method to   
-// begin a new drawing path.
-
-// on mousemove, continuously add a new point to the path with lineTo(), and color the last segment with stroke().
-
-// on mouseup, set a flag to disable the drawing.
-
-
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -20,7 +10,7 @@ const stroke = document.getElementById("stroke");
 const weightVal = document.getElementById("weightVal");
 
 weightVal.value = weight.value;
-strokeColor = stroke.value;
+let strokeColor = stroke.value;
 
 stroke.addEventListener("change", e => { 
   strokeColor = stroke.value;
@@ -44,6 +34,29 @@ const clearCanvas = (color) => {
   ctx.fillRect(0, 0, canvas.width, canvas.height)
 }
 
+let drawing = false;
+let current = { x: 0, y: 0 };
+
+canvas.addEventListener("mousedown", e => { 
+  current = { x: e.layerX, y: e.layerY };
+  drawing = true;
+});
+
+canvas.addEventListener("mousemove", e => { 
+  if (drawing) {
+    ctx.beginPath();
+    ctx.moveTo(current.x, current.y);
+    current = { x: e.layerX, y: e.layerY };
+    ctx.lineTo(current.x, current.y);
+    ctx.strokeStyle = strokeColor;
+    ctx.lineWidth = weightVal.value;
+    ctx.stroke();
+  }
+});
+
+canvas.addEventListener("mouseup", e => { 
+  drawing = false;
+});
 
 
 

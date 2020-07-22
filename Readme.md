@@ -28,6 +28,8 @@ Projects
 <p>
 07/15/2020 - 004 Breakout - Javascript
 <p>
-06/30/2020 - 005 Fresco - Javascript (still coming)
+06/30/2020 - 005 Fresco - Javascript
+<p>
+07/22/2020 - 006 HiLow - Javascript
 
 

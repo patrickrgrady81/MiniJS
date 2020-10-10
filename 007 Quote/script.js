@@ -11,5 +11,5 @@ function reqListener () {
 
 let req = new XMLHttpRequest();
 req.addEventListener("load", reqListener);
-req.open("GET", "http://quotes.stormconsultancy.co.uk/random.json");
+req.open("GET", "https://quotes.stormconsultancy.co.uk/random.json");
 req.send();

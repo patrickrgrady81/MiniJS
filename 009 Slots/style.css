@@ -1,0 +1,23 @@
+body {
+  background-color: black;
+  text-align: center;
+}
+
+#reels {
+  margin-top: 5rem;
+  height: 50vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.reel { 
+  border: 1px solid black; 
+}
+
+#spin {
+  margin-top: 2rem;
+  padding: 0.5rem 2rem;
+  background: grey;
+  color: white;
+}

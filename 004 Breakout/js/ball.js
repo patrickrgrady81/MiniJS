@@ -2,8 +2,8 @@ export default class Ball {
   constructor(globals) { 
     this.globals = globals;
     this.size = 15;
-    this.xspeed = 1.3;
-    this.yspeed = 1.7;
+    this.xspeed = 1.7;
+    this.yspeed = 2.3;
     this.pos = { x: 0, y: 0 };
     this.reset();
   }
@@ -17,7 +17,6 @@ export default class Ball {
     this.pos.x = this.globals.width / 2 + rx;
     this.pos.y = this.globals.height / 2 + ry;
     this.xspeed *= Math.random() > 0.5 ? -1 : 1
-    this.yspeed = Math.abs(this.yspeed);
   }
 
   bound = (paddle) => { 

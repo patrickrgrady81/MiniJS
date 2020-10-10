@@ -7,7 +7,7 @@ export default class Levels {
   constructor() { 
     this.currentLevel = 1;
     this.level = [];
-    this.level.push(new L0());
+    // this.level.push(new L0());
     this.level.push(new L1());
     this.level.push(new L2());
     this.level.push(new L3());

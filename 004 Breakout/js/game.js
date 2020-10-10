@@ -12,7 +12,6 @@ export default class Game {
     this.currentLevel = levels.currentLevel
     this.bricks = levels.level[this.currentLevel - 1].bricks;
     this.brickCount = this.bricks.length;
-    this.bpc = false;  // ballPaddleCollision check
 
     window.requestAnimationFrame(this.play);
   }
@@ -23,21 +22,14 @@ export default class Game {
   }
 
   ballPaddleCollide = () => { 
-    if (!this.bpc) { // if the ballPaddleCollision has not happened in the last second
-      let collision = false;
-      if (this.ball.pos.x > this.paddle.pos.x) {
-        if (this.ball.pos.x > this.paddle.pos.x && this.ball.pos.x + this.ball.size < this.paddle.pos.x + this.paddle.width) {
-          if (this.ball.pos.y + this.ball.size - 4 >= this.paddle.pos.y && this.ball.pos.y < this.paddle.pos.y + this.paddle.height) {
-            this.bpc = true;
-            collision = true;
-            window.setTimeout(() => { 
-              this.bpc = false;
-            }, 1000);
-          }
-        }
+    let collision = false;
+    if (this.ball.pos.x > this.paddle.pos.x) { 
+      if (this.ball.pos.x > this.paddle.pos.x && this.ball.pos.x + this.ball.size < this.paddle.pos.x + this.paddle.width) { 
+        if (this.ball.pos.y + this.ball.size -4 >= this.paddle.pos.y && this.ball.pos.y < this.paddle.pos.y + this.paddle.height)
+        collision = true;
       }
-      return collision;
     }
+    return collision;
   }
 
   ballBrickCollide = () => { 
@@ -55,18 +47,14 @@ export default class Game {
 
   nextLevel = () => { 
     this.currentLevel++;
+    console.log(this.currentLevel);
     this.ball.reset();
     this.paddle.reset();
     this.globals.pause();
     this.bricks = this.levels.level[this.currentLevel - 1].bricks;
   }
 
-  special = () => { 
-    if (Math.random() < 0.3) { 
-      console.log("Special");
-    }
-
-  }
+  special = () => { }
 
   play = () => { 
     this.clear(this.globals.bgColor);

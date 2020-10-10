@@ -14,7 +14,7 @@ export default class Globals {
       gameOver: false
     }
 
-    this.edit = false;
+    this.edit = true;
 
     this.fontColor = "black";
     this.font = "30px Arial";

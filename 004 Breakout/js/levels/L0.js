@@ -7,6 +7,6 @@ export default class L0 {
   }
 
   create = () => { 
-    this.bricks.push(new Brick(1, 0, 50, 800));
+    this.bricks.push(new Brick(4, 360, 65, width = 120));
   }
 }

@@ -1,0 +1,37 @@
+.creeper {
+  /* display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-rows: repeat(8, auto);
+  grid-gap: 0; */
+
+  /* display: table;
+  table-layout: auto;
+  width: 100%; */
+
+  display: grid;
+  grid-template-columns: 1fr auto auto auto auto auto auto auto;
+  width: 100%;
+}
+
+
+
+.g, .b {
+  width: 100vw;
+  height: 100vh;
+
+  /* display: table-cell;
+  width: 100%;
+  max-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+.g {
+  background-color: green;
+}
+
+.b {
+  background-color: black;
+}

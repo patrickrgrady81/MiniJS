@@ -8,17 +8,23 @@
   /* display: table;
   table-layout: auto;
   width: 100%; */
-
+  width: 100vw;
+  height: 100vh;
   display: grid;
-  grid-template-columns: 1fr auto auto auto auto auto auto auto;
-  width: 100%;
+  grid-template-columns: repeat(8, auto);
+  /* width: 100%; */
+}
+
+body {
+  width: 100vw;
 }
 
 
 
 .g, .b {
-  width: 100vw;
-  height: 100vh;
+  display: inline-block;
+  width: 12.5vw;
+  height: 12.5vh;
 
   /* display: table-cell;
   width: 100%;

@@ -2,7 +2,9 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: repeat(8, auto);
+  flex-direction: column;
+  aspect-ratio: 3 / 2;
+
 }
 
 body {

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Lattice</title>
+</head>
+<body>
+    <div class="parent">
+        <nav class="nav"></nav>
+        <main class="main-content">
+                <canvas class="canvas" width='800' height='600'></canvas>
+            <div class="options">
+                <form id='myForm'>
+                    <label form="myForm">OPTIONS</label>
+                    <div class="check">
+                        <input type="checkbox" id="auto" name="auto">
+                        <label for="auto" class="add-margin-bottom">Auto Generate Grid When Dimensions Change</label>
+                    </div>
+                    <label for="rows">ROWS</label>
+                    <select id="rows"></select>
+                    <label for="columns">COLUMNS</label>
+                    <select id="columns"></select>
+                    <button id="createButton">Create Grid</button>
+                    <button id="addButton" disabled>Add Box</button>
+                </form>
+            </div>
+        </main>
+        <footer class="footer"></footer>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

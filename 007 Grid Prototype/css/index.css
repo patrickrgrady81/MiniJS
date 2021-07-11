@@ -1,0 +1,90 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+nav, footer {
+  border: 3px solid red;
+  border-radius: 1rem;
+}
+
+nav {
+  height: 10vh;
+}
+
+main {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(197, 217, 255);
+}
+
+.canvas {
+  width: 65vw;
+  height: 65vh;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 25vw;
+  height: 65vh;
+  border: 3px solid gold;
+  border-radius: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgb(255, 247, 200);;
+}
+
+footer {
+  height: 10vh;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+#myForm {
+  margin: 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  /* height: 50vh; */
+}
+
+input[type='select'], button {
+  margin: 1rem;
+  padding: 1rem;
+}
+
+label:nth-child(1){
+  margin-bottom: 2rem;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.add-margin-bottom {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.check {
+  display: flex;
+  flex-direction: row;
+}
+
+nav, footer {
+  background-color: rgb(204, 204, 204);
+}

@@ -40,7 +40,7 @@ const dayNames = (day) => {
 }
 
 const clearCanvas = (ctx) => { 
-  ctx.fillStyle = "white";
+  ctx.fillStyle = "aquamarine";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
